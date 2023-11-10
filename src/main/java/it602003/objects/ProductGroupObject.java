@@ -16,6 +16,27 @@ public class ProductGroupObject {
 	private int pg_created_author_id;
 	private byte pg_language;
 
+	public ProductGroupObject() {
+	};
+
+	public ProductGroupObject(String pg_name, short pg_ps_id, int pg_manager_id, String pg_notes, boolean pg_delete,
+			String pg_deleted_date, String pg_deleted_author, String pg_modified_date, String pg_created_date,
+			String pg_enable, String pg_name_en, int pg_created_author_id, byte pg_language) {
+		this.pg_name = pg_name;
+		this.pg_ps_id = pg_ps_id;
+		this.pg_manager_id = pg_manager_id;
+		this.pg_notes = pg_notes;
+		this.pg_delete = pg_delete;
+		this.pg_deleted_date = pg_deleted_date;
+		this.pg_deleted_author = pg_deleted_author;
+		this.pg_modified_date = pg_modified_date;
+		this.pg_created_date = pg_created_date;
+		this.pg_enable = pg_enable;
+		this.pg_name_en = pg_name_en;
+		this.pg_created_author_id = pg_created_author_id;
+		this.pg_language = pg_language;
+	}
+
 	public short getPg_id() {
 		return pg_id;
 	}

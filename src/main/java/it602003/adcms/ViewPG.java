@@ -25,7 +25,20 @@ public class ViewPG extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JFrame frame;
 	private JPanel contentPane;
+	private JPanel contentPane_Add;
 	private JTable tblPG;
+	private JLabel lblPGName;
+	private JLabel lblPGPSID;
+	private JLabel lblManagerID;
+	private JLabel lblNotes;
+	private JLabel lblEnName;
+	private JLabel lblLanguage;
+	private JTextField textPGName;
+	private JTextField txtPGPSID;
+	private JTextField textManagerID;
+	private JTextArea textNotes;
+	private JTextField textEnName;
+	private JTextField textLanguage;
 
 	/**
 	 * Launch the application.
@@ -101,7 +114,7 @@ public class ViewPG extends JFrame {
 		btnDeleteRow.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		btnDeleteRow.setBackground(new Color(255, 255, 255));
 		btnDeleteRow.setFont(new Font("Arial", Font.PLAIN, 20));
-		btnDeleteRow.setBounds(1025, 550, 120, 38);
+		btnDeleteRow.setBounds(1010, 550, 110, 34);
 		contentPane.add(btnDeleteRow);
 
 		// Gán phương thức xóa vào nút xóa
@@ -135,16 +148,102 @@ public class ViewPG extends JFrame {
 		btnAddRow.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		btnAddRow.setBackground(new Color(255, 255, 255));
 		btnAddRow.setFont(new Font("Arial", Font.PLAIN, 20));
-		btnAddRow.setBounds(880, 550, 120, 38);
+		btnAddRow.setBounds(865, 550, 110, 34);
 		contentPane.add(btnAddRow);
+
+		// Gán phương thức thêm vào nút thêm
+		btnAddRow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Tạo khung cửa sổ
+				frame = new JFrame("Add data row for Product Group Table");
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setBounds(100, 100, 800, 700);
+				frame.setBackground(new Color(245, 245, 245));
+				frame.setVisible(true);
+
+				// Tạo content
+				contentPane_Add = new JPanel();
+				contentPane_Add.setBackground(new Color(245, 245, 245));
+				contentPane_Add.setBorder(new EmptyBorder(5, 5, 5, 5));
+				frame.setContentPane(contentPane_Add);
+				contentPane_Add.setLayout(null);
+
+				JLabel lblTitle = new JLabel("Type information about new product group");
+				lblTitle.setBounds(100, 10, 600, 62);
+				lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+				lblTitle.setFont(new Font("Arial", Font.BOLD, 24));
+				contentPane_Add.add(lblTitle);
+
+				lblPGName = new JLabel("Name");
+				lblPGName.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblPGName.setBounds(30, 80, 100, 15);
+				contentPane_Add.add(lblPGName);
+
+				textPGName = new JTextField();
+				textPGName.setBounds(30, 100, 300, 25);
+				contentPane_Add.add(textPGName);
+				textPGName.setColumns(10);
+
+				lblPGPSID = new JLabel("PG_PS ID");
+				lblPGPSID.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblPGPSID.setBounds(30, 125, 100, 15);
+				contentPane_Add.add(lblPGPSID);
+
+				txtPGPSID = new JTextField();
+				txtPGPSID.setBounds(30, 145, 300, 25);
+				contentPane_Add.add(txtPGPSID);
+				txtPGPSID.setColumns(10);
+
+				lblManagerID = new JLabel("Manager ID");
+				lblManagerID.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblManagerID.setBounds(30, 170, 100, 15);
+				contentPane_Add.add(lblManagerID);
+
+				textManagerID = new JTextField();
+				textManagerID.setBounds(30, 190, 300, 25);
+				contentPane_Add.add(textManagerID);
+				textManagerID.setColumns(10);
+
+				lblNotes = new JLabel("Notes");
+				lblNotes.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblNotes.setBounds(30, 215, 100, 15);
+				contentPane_Add.add(lblNotes);
+
+				textNotes = new JTextArea();
+				textNotes.setBounds(30, 235, 300, 200);
+				contentPane_Add.add(textNotes);
+				textNotes.setColumns(10);
+
+				lblEnName = new JLabel("English name");
+				lblEnName.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblEnName.setBounds(30, 460, 100, 15);
+				contentPane_Add.add(lblEnName);
+
+				textEnName = new JTextField();
+				textEnName.setBounds(30, 480, 300, 25);
+				contentPane_Add.add(textEnName);
+				textEnName.setColumns(10);
+
+				lblLanguage = new JLabel("Language");
+				lblLanguage.setFont(new Font("Arial", Font.PLAIN, 16));
+				lblLanguage.setBounds(30, 505, 100, 15);
+				contentPane_Add.add(lblLanguage);
+
+				textLanguage = new JTextField();
+				textLanguage.setBounds(30, 525, 300, 25);
+				contentPane_Add.add(textLanguage);
+				textLanguage.setColumns(10);
+			}
+		});
 
 		// Tạo nút chỉnh sửa hàng
 		JButton btnEditRow = new JButton("Edit");
 		btnEditRow.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		btnEditRow.setBackground(new Color(255, 255, 255));
 		btnEditRow.setFont(new Font("Arial", Font.PLAIN, 20));
-		btnEditRow.setBounds(735, 550, 120, 38);
-		contentPane.add(btnEditRow);	
+		btnEditRow.setBounds(720, 550, 110, 34);
+		contentPane.add(btnEditRow);
+
 		loadTable(this.itemsArrayList);
 
 	}

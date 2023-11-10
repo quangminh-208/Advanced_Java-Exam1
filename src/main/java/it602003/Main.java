@@ -7,60 +7,34 @@ import it602003.objects.ProductGroupObject;
 import it602003.process.processImpl.ProductGroupImpl;
 
 public class Main {
-//	static ArrayList<ProductGroupObject> pro;
-//	static ProductGroupImpl process;
-//
-//	public static void main(String[] args) {
-//		process = new ProductGroupImpl();
+	static ArrayList<ProductGroupObject> pro;
+	static ProductGroupImpl process;
+	static ProductGroupObject pgObj;
+
+	public static void main(String[] args) {
+		process = new ProductGroupImpl();
+		
+//		Hiển thị bảng
 //		pro = process.getProductGroupObjects();
 //
 //		for (ProductGroupObject a : pro) {
 //			System.out.println(a);
 //		}
 //		System.out.println("-----------");
-//	}
-	public static void main(String[] args) {
-		Main menu = new Main();
 
-		// Display the menu options.
-		menu.displayMenu();
-
-		// Get the user's selection.
-		Scanner scanner = new Scanner(System.in);
-		int selection = scanner.nextInt();
-
-		// Handle the user's selection.
-		menu.handleSelection(selection);
-	}
-
-	private void displayMenu() {
-		System.out.println("Product Group Data Table");
-		System.out.println("1. Hiển thị toàn bộ bảng");
-		System.out.println("Product Group Data Table");
-		System.out.println("Product Group Data Table");
-		System.out.println("Product Group Data Table");
-	}
-
-	private void handleSelection(int selection) {
-		switch (selection) {
-		case 1:
-			// Handle option 1.
-			break;
-		case 2:
-			// Handle option 2.
-			break;
-		case 3:
-			// Handle option 3.
-			break;
-		case 4:
-			// Exit the program.
-			System.exit(0);
-			break;
-		default:
-			// Invalid selection.
-			System.out.println("Invalid selection.");
-			break;
-		}
+//		Thêm hàng
+//		pgObj = new ProductGroupObject();
+//		pgObj.setPg_name("Quan ao mua dong");
+//		pgObj.setPg_name_en("Winter clothes");
+//		System.out.println(process.addProductGroup(pgObj));
+		
+//		Sửa hàng
+		pgObj = new ProductGroupObject();
+		pgObj.setPg_id((short) 54);
+		pgObj.setPg_name("Quan ao mua he");
+		pgObj.setPg_name_en("Summer clothes");
+		System.out.println(process.updateProductGroupObject(pgObj));
+		
+//		Xóa hàng
 	}
 }
-
